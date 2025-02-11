@@ -34,6 +34,15 @@ jobs:
           node-version: 22
           cache: npm
       
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Create type definitions
+        run: yarn tsc
+      
+      - name: Build backend
+        run: yarn build:backend
+
       # - name: Log in to registry
       #   uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3.3.0
       #   with:
