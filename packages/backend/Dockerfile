@@ -9,7 +9,7 @@
 #
 # Once the commands have been run, you can build the image using `yarn build-image`
 
-FROM node:20-bookworm-slim
+FROM node:22-bookworm-slim
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
@@ -47,6 +47,9 @@ ENV NODE_ENV=production
 
 # This disables node snapshot for Node 20 to work with the Scaffolder
 ENV NODE_OPTIONS="--no-node-snapshot"
+
+# To work around problems with installing typescript@5.5.4
+ENV YARN_CHECKSUM_BEHAVIOR="update"
 
 # Copy repo skeleton first, to avoid unnecessary docker cache invalidation.
 # The skeleton contains the package.json of each package in the monorepo,
