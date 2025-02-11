@@ -1,7 +1,7 @@
 name: Publish container image
 
 on:
-  # For every Release
+  # For every release
   release:
     types:
       - published
