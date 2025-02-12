@@ -13,7 +13,6 @@ backend:
   # all interfaces, the most permissive setting. The right value depends on your specific deployment.
   listen: ':7007'
 
-  # config options: https://node-postgres.com/apis/client
   database:
     client: better-sqlite3
     connection: ':memory:'
