@@ -16,7 +16,7 @@ backend:
   database:
     client: better-sqlite3
     connection:
-      directory: "/db"
+      directory: /db
 
 auth:
   providers:
